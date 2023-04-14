@@ -18,7 +18,7 @@ export default function EditPage() {
         "Content-Type": "application/json",
       },
     });
-    router.push("/");
+    router.push(`/places/${id}`);
   }
 
   if (!isReady || isLoading || error) return <h2>Loading...</h2>;

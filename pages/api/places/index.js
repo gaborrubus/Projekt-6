@@ -12,11 +12,9 @@ export default async function handler(request, response) {
   if (request.method === "POST") {
     try {
       const placeData = request.body;
-
-      const newPlace = new Joke(placeData);
+      const newPlace = new Place(placeData);
       await newPlace.save();
-
-      response.status(201).json(placeData);
+      response.status(201).json({ status: "Place created" });
     } catch (error) {
       response.status(400).json({ error: error.message });
     }
