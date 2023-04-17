@@ -12,16 +12,16 @@ export default async function handler(request, response) {
     }
   }
 
-  if (request.method === "PUT") {
+  if (request.method === "PATCH") {
     const updatePlace = request.body;
     await Place.findByIdAndUpdate(id, {
       $set: updatePlace,
     });
-    response.status(200).json({ status: `Place ${id} successfully update.` });
+    response.status(201).json({ status: `Place ${id} successfully update.` });
   }
 
   if (request.method === "DELETE") {
     await Place.findByIdAndDelete(id);
-    response.status(200).json({ status: `Place ${id} successfully delete.` });
+    response.status(202).json({ status: `Place ${id} successfully delete.` });
   }
 }
