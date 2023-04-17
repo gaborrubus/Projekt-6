@@ -20,6 +20,7 @@ export default function CreatePlacePage() {
       },
       body: JSON.stringify(place),
     });
+    console.log(response);
     if (!response.ok) {
       console.log("Error");
     }

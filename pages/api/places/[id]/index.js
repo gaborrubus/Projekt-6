@@ -12,7 +12,7 @@ export default async function handler(request, response) {
     }
   }
 
-  if (request.method === "PATCH") {
+  if (request.method === "PUT") {
     const updatePlace = request.body;
     await Place.findByIdAndUpdate(id, {
       $set: updatePlace,
